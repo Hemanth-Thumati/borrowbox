@@ -3,31 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BorrowBox – Join the Waitlist</title>
+  <title>BorrowBox – Borrow Smarter, Live Lighter</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
 
-  <header class="hero">
-    <h1>Welcome to BorrowBox</h1>
-    <p>Borrow tools, books, and more from your community.</p>
-    <a href="#signup" class="cta-button">Join the Waitlist</a>
-  </header>
+<header class="hero">
+  <h1>🚀 BorrowBox</h1>
+  <p>Why buy when you can borrow? Share tools, gear, and more — locally.</p>
+  <button class="cta-button bounce-in" onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth' })">
+    Join the Waitlist
+  </button>
+</header>
 
-  <section id="signup">
-    <h2>📬 Join the BorrowBox Waitlist</h2>
-    <form id="signupForm">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <input type="text" id="city" name="city" placeholder="Your City" required />
-      <input type="submit" value="Sign Up" />
-    </form>
-  </section>
+<section>
+  <h2>🔧 How It Works</h2>
+  <div class="steps">
+    <div class="card fade-in"><span class="icon">🧰</span><strong>List or Find</strong><br/>Upload items or browse near you.</div>
+    <div class="card fade-in delay-1"><span class="icon">🤝</span><strong>Borrow & Lend</strong><br/>Chat, coordinate, and handle deposits.</div>
+    <div class="card fade-in delay-2"><span class="icon">🔁</span><strong>Return & Earn</strong><br/>Track returns, earn trust & points.</div>
+  </div>
+</section>
 
-  <footer>
-    <p>Made with ❤️ by BorrowBox</p>
-  </footer>
+<section>
+  <h2>🌟 Why BorrowBox?</h2>
+  <div class="why">
+    <div class="card fade-in"><span class="icon">🪙</span><strong>Save Money</strong><br/>Avoid buying things you rarely use.</div>
+    <div class="card fade-in delay-1"><span class="icon">🌍</span><strong>Reduce Waste</strong><br/>Every borrow = less consumption.</div>
+    <div class="card fade-in delay-2"><span class="icon">🏘️</span><strong>Build Community</strong><br/>Share safely within your neighborhood.</div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="signup">
+  <h2>📬 Get Early Access</h2>
+  <form id="signupForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="city" placeholder="City (e.g., Bangalore)" required />
+    <input type="submit" value="Sign Up" />
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 BorrowBox | Made for smarter, lighter living.
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
