@@ -1,10 +1,11 @@
 document.getElementById("signupForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
+  const inputs = e.target.elements;
   const data = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    city: document.getElementById("city").value
+    name: inputs["name"].value,
+    email: inputs["email"].value,
+    city: inputs["city"].value
   };
 
   fetch("https://sheetdb.io/api/v1/v38c5yrea3ire", {
@@ -12,13 +13,13 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ data: data })
   })
-  .then(response => response.json())
+  .then(res => res.json())
   .then(json => {
     alert("✅ Thanks for signing up!");
-    document.getElementById("signupForm").reset();
+    e.target.reset();
   })
-  .catch(error => {
-    alert("❌ Submission failed. Please try again.");
-    console.error(error);
+  .catch(err => {
+    alert("❌ Submission failed. Try again.");
+    console.error(err);
   });
 });
