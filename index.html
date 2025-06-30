@@ -1,45 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <link rel="stylesheet" href="style.css" />
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BorrowBox – Join the Waitlist</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      padding: 2rem;
-      text-align: center;
-    }
-    h2 {
-      color: #333;
-    }
-    form {
-      margin-top: 20px;
-    }
-    input[type="text"], input[type="email"] {
-      padding: 10px;
-      margin: 10px;
-      width: 250px;
-      max-width: 90%;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    input[type="submit"] {
-      padding: 10px 20px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background: #0056b3;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <header class="hero">
+    <h1>Welcome to BorrowBox</h1>
+    <p>Borrow tools, books, and more from your community.</p>
+    <a href="#signup" class="cta-button">Join the Waitlist</a>
+  </header>
 
   <section id="signup">
     <h2>📬 Join the BorrowBox Waitlist</h2>
@@ -51,32 +24,10 @@
     </form>
   </section>
 
-  <script>
-    document.getElementById("signupForm").addEventListener("submit", function (e) {
-      e.preventDefault();
+  <footer>
+    <p>Made with ❤️ by BorrowBox</p>
+  </footer>
 
-      const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        city: document.getElementById("city").value
-      };
-
-      fetch("https://sheetdb.io/api/v1/v38c5yrea3ire", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: data })
-      })
-      .then(response => response.json())
-      .then(json => {
-        alert("✅ Thanks for signing up!");
-        document.getElementById("signupForm").reset();
-      })
-      .catch(error => {
-        alert("❌ Submission failed. Please try again.");
-        console.error(error);
-      });
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
