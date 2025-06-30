@@ -9,6 +9,75 @@
     html {
       scroll-behavior: smooth;
     }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .hero {
+      background: linear-gradient(120deg, #3b82f6, #2563eb);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .cta-button {
+      background: white;
+      color: #3b82f6;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    section {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .steps, .why {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    input[type="text"], input[type="email"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    input[type="submit"] {
+      background: #3b82f6;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e0e7ff;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
@@ -16,7 +85,7 @@
 <header class="hero">
   <h1>🚀 BorrowBox</h1>
   <p>Why buy when you can borrow? Share tools, gear, and more — locally.</p>
-  <button class="cta-button bounce-in" onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth' })">
+  <button class="cta-button" onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth' })">
     Join the Waitlist
   </button>
 </header>
@@ -24,18 +93,18 @@
 <section>
   <h2>🔧 How It Works</h2>
   <div class="steps">
-    <div class="card fade-in"><span class="icon">🧰</span><strong>List or Find</strong><br/>Upload items or browse near you.</div>
-    <div class="card fade-in delay-1"><span class="icon">🤝</span><strong>Borrow & Lend</strong><br/>Chat, coordinate, and handle deposits.</div>
-    <div class="card fade-in delay-2"><span class="icon">🔁</span><strong>Return & Earn</strong><br/>Track returns, earn trust & points.</div>
+    <div class="card"><strong>🧰 List or Find</strong><br/>Upload items or browse near you.</div>
+    <div class="card"><strong>🤝 Borrow & Lend</strong><br/>Chat, coordinate, and handle deposits.</div>
+    <div class="card"><strong>🔁 Return & Earn</strong><br/>Track returns, earn trust & points.</div>
   </div>
 </section>
 
 <section>
   <h2>🌟 Why BorrowBox?</h2>
   <div class="why">
-    <div class="card fade-in"><span class="icon">🪙</span><strong>Save Money</strong><br/>Avoid buying things you rarely use.</div>
-    <div class="card fade-in delay-1"><span class="icon">🌍</span><strong>Reduce Waste</strong><br/>Every borrow = less consumption.</div>
-    <div class="card fade-in delay-2"><span class="icon">🏘️</span><strong>Build Community</strong><br/>Share safely within your neighborhood.</div>
+    <div class="card"><strong>🪙 Save Money</strong><br/>Avoid buying things you rarely use.</div>
+    <div class="card"><strong>🌍 Reduce Waste</strong><br/>Every borrow = less consumption.</div>
+    <div class="card"><strong>🏘️ Build Community</strong><br/>Share safely within your neighborhood.</div>
   </div>
 </section>
 
@@ -63,7 +132,7 @@
       city: document.getElementById("city").value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbz-kKqv9WLyQI3oh0qtW6yRJUBEVuNIEd0waQQFlGVpYA9N_uxH-wUXHmbFrvbC5nu0MQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbzDUOw4eUzmzR6BOZ0jzZC7B0MfFrD47QLZC6hLmdZf9R-RkLlt72Y3tLtzpqUg6oVC/exec", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
