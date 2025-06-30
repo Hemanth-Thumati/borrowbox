@@ -63,7 +63,7 @@
       city: document.getElementById("city").value
     };
 
-    fetch("https://script.google.com/macros/s/AKfycbxc_5ocnG_JsNkf4FFdOdMPWzkr8MaNbuhsHDCoSeBLWTdmYKFnmGvCY1IF28o6mWsgew/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbz-kKqv9WLyQI3oh0qtW6yRJUBEVuNIEd0waQQFlGVpYA9N_uxH-wUXHmbFrvbC5nu0MQ/exec", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -73,6 +73,7 @@
     .then(res => res.json())
     .then(response => {
       alert("✅ Thanks for signing up! We'll notify you soon.");
+      document.getElementById("signupForm").reset();
     })
     .catch(err => {
       alert("❌ Submission failed. Try again later.");
