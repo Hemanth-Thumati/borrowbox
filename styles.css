@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.hero {
+  background: linear-gradient(120deg, #3b82f6, #2563eb);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0 0 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+.cta-button {
+  background: white;
+  color: #3b82f6;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+section {
+  max-width: 960px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #1e40af;
+}
+
+.steps, .why {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input[type="submit"] {
+  background: #3b82f6;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #e0e7ff;
+  font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.bounce-in {
+  animation: bounceIn 0.8s ease forwards;
+}
