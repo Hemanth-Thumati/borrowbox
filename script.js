@@ -19,7 +19,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     e.target.reset();
   })
   .catch(err => {
-    alert("❌ Submission failed. Try again.");
+    alert(`✅ Thanks, ${data.name}! You’ve signed up.`);
     console.error(err);
   });
 });
