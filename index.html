@@ -3,145 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BorrowBox – Borrow Smarter, Live Lighter</title>
+  <title>BorrowBox – Join the Waitlist</title>
   <style>
-    html { scroll-behavior: smooth; }
     body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0;
-      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 2rem;
+      text-align: center;
+    }
+    h2 {
       color: #333;
     }
-    .hero {
-      background: linear-gradient(120deg, #3b82f6, #2563eb);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .cta-button {
-      background: white;
-      color: #3b82f6;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-    section {
-      max-width: 960px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-    .steps, .why {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
     form {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.05);
-      max-width: 500px;
-      margin: 0 auto;
+      margin-top: 20px;
     }
     input[type="text"], input[type="email"] {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 20px;
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+      max-width: 90%;
       border: 1px solid #ccc;
-      border-radius: 6px;
+      border-radius: 4px;
     }
     input[type="submit"] {
-      background: #3b82f6;
+      padding: 10px 20px;
+      background: #007bff;
       color: white;
-      padding: 12px 25px;
       border: none;
-      border-radius: 6px;
+      border-radius: 4px;
       cursor: pointer;
-      font-weight: bold;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #e0e7ff;
-      font-size: 0.9em;
+    input[type="submit"]:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
 
-<header class="hero">
-  <h1>🚀 BorrowBox</h1>
-  <p>Why buy when you can borrow? Share tools, gear, and more — locally.</p>
-  <button class="cta-button" onclick="document.getElementById('signup').scrollIntoView({ behavior: 'smooth' })">
-    Join the Waitlist
-  </button>
-</header>
+  <section id="signup">
+    <h2>📬 Join the BorrowBox Waitlist</h2>
+    <form id="signupForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+      <input type="text" id="city" name="city" placeholder="Your City" required />
+      <input type="submit" value="Sign Up" />
+    </form>
+  </section>
 
-<section>
-  <h2>🔧 How It Works</h2>
-  <div class="steps">
-    <div class="card"><strong>🧰 List or Find</strong><br/>Upload items or browse near you.</div>
-    <div class="card"><strong>🤝 Borrow & Lend</strong><br/>Chat, coordinate, and handle deposits.</div>
-    <div class="card"><strong>🔁 Return & Earn</strong><br/>Track returns, earn trust & points.</div>
-  </div>
-</section>
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-<section>
-  <h2>🌟 Why BorrowBox?</h2>
-  <div class="why">
-    <div class="card"><strong>🪙 Save Money</strong><br/>Avoid buying things you rarely use.</div>
-    <div class="card"><strong>🌍 Reduce Waste</strong><br/>Every borrow = less consumption.</div>
-    <div class="card"><strong>🏘️ Build Community</strong><br/>Share safely within your neighborhood.</div>
-  </div>
-</section>
-<section id="signup">
-  <h2>📬 Get Early Access</h2>
-  <form id="signupForm">
-    <input type="text" id="name" name="name" placeholder="Your Name" required />
-    <input type="email" id="email" name="email" placeholder="Your Email" required />
-    <input type="text" id="city" name="city" placeholder="City (e.g., Bangalore)" required />
-    <input type="submit" value="Sign Up" />
-  </form>
-</section>
+      const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value
+      };
 
-<script>
-  document.getElementById("signupForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const data = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      city: document.getElementById("city").value
-    };
-
-    fetch("https://sheetdb.io/api/v1/y2xn3s1hyxecu", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ data: data })
-    })
-    .then(res => res.json())
-    .then(response => {
-      alert("✅ Thanks for signing up! We'll notify you soon.");
-      document.getElementById("signupForm").reset();
-    })
-    .catch(err => {
-      alert("❌ Submission failed. Try again later.");
-      console.error(err);
+      fetch("https://sheetdb.io/api/v1/v38c5yrea3ire", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: data })
+      })
+      .then(response => response.json())
+      .then(json => {
+        alert("✅ Thanks for signing up!");
+        document.getElementById("signupForm").reset();
+      })
+      .catch(error => {
+        alert("❌ Submission failed. Please try again.");
+        console.error(error);
+      });
     });
-  });
-</script>
-
-
+  </script>
 
 </body>
 </html>
